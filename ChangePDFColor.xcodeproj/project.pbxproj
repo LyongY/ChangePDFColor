@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */; };
+		19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E928C6EB1000C25FA8 /* ContentView.swift */; };
+		19C710EC28C6EB1200C25FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C710EB28C6EB1200C25FA8 /* Assets.xcassets */; };
+		19C710EF28C6EB1200C25FA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C710EE28C6EB1200C25FA8 /* Preview Assets.xcassets */; };
+		19C710F728C6EB2500C25FA8 /* ChangeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710F628C6EB2500C25FA8 /* ChangeColor.swift */; };
+		19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */; };
+		19FDCA4E28C83C2900142487 /* DragableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDCA4D28C83C2900142487 /* DragableView.swift */; };
+		19FDCA5028C8915900142487 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDCA4F28C8915900142487 /* PDFView.swift */; };
+		70D24ACD52D9DB08860807C3 /* Pods_ChangePDFColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9273997A6B6D5E2623DD5090 /* Pods_ChangePDFColor.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0CAD78C28940BF32F8DC2348 /* Pods-ChangePDFColor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangePDFColor.release.xcconfig"; path = "Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor.release.xcconfig"; sourceTree = "<group>"; };
+		19C710E428C6EB1000C25FA8 /* ChangePDFColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangePDFColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePDFColorApp.swift; sourceTree = "<group>"; };
+		19C710E928C6EB1000C25FA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		19C710EB28C6EB1200C25FA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19C710EE28C6EB1200C25FA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		19C710F028C6EB1200C25FA8 /* ChangePDFColor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangePDFColor.entitlements; sourceTree = "<group>"; };
+		19C710F628C6EB2500C25FA8 /* ChangeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColor.swift; sourceTree = "<group>"; };
+		19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangeColor+RGB.swift"; sourceTree = "<group>"; };
+		19FDCA4D28C83C2900142487 /* DragableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableView.swift; sourceTree = "<group>"; };
+		19FDCA4F28C8915900142487 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		59B66B96083F4D51AE0FEC7B /* Pods-ChangePDFColor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangePDFColor.debug.xcconfig"; path = "Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor.debug.xcconfig"; sourceTree = "<group>"; };
+		9273997A6B6D5E2623DD5090 /* Pods_ChangePDFColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChangePDFColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19C710E128C6EB1000C25FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D24ACD52D9DB08860807C3 /* Pods_ChangePDFColor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C710DB28C6EB1000C25FA8 = {
+			isa = PBXGroup;
+			children = (
+				19C710E628C6EB1000C25FA8 /* ChangePDFColor */,
+				19C710E528C6EB1000C25FA8 /* Products */,
+				4A7551FA67301F69266AD937 /* Pods */,
+				1F2528B61D4220DD1EC08E82 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		19C710E528C6EB1000C25FA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19C710E428C6EB1000C25FA8 /* ChangePDFColor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19C710E628C6EB1000C25FA8 /* ChangePDFColor */ = {
+			isa = PBXGroup;
+			children = (
+				19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */,
+				19C710E928C6EB1000C25FA8 /* ContentView.swift */,
+				19C710F628C6EB2500C25FA8 /* ChangeColor.swift */,
+				19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */,
+				19FDCA4D28C83C2900142487 /* DragableView.swift */,
+				19FDCA4F28C8915900142487 /* PDFView.swift */,
+				19C710EB28C6EB1200C25FA8 /* Assets.xcassets */,
+				19C710F028C6EB1200C25FA8 /* ChangePDFColor.entitlements */,
+				19C710ED28C6EB1200C25FA8 /* Preview Content */,
+			);
+			path = ChangePDFColor;
+			sourceTree = "<group>";
+		};
+		19C710ED28C6EB1200C25FA8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				19C710EE28C6EB1200C25FA8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1F2528B61D4220DD1EC08E82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9273997A6B6D5E2623DD5090 /* Pods_ChangePDFColor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A7551FA67301F69266AD937 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59B66B96083F4D51AE0FEC7B /* Pods-ChangePDFColor.debug.xcconfig */,
+				0CAD78C28940BF32F8DC2348 /* Pods-ChangePDFColor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19C710E328C6EB1000C25FA8 /* ChangePDFColor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C710F328C6EB1200C25FA8 /* Build configuration list for PBXNativeTarget "ChangePDFColor" */;
+			buildPhases = (
+				71A3951751587B58AAE0D02C /* [CP] Check Pods Manifest.lock */,
+				19C710E028C6EB1000C25FA8 /* Sources */,
+				19C710E128C6EB1000C25FA8 /* Frameworks */,
+				19C710E228C6EB1000C25FA8 /* Resources */,
+				8137FB199751EC63A7A62640 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChangePDFColor;
+			productName = ChangePDFColor;
+			productReference = 19C710E428C6EB1000C25FA8 /* ChangePDFColor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19C710DC28C6EB1000C25FA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					19C710E328C6EB1000C25FA8 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 19C710DF28C6EB1000C25FA8 /* Build configuration list for PBXProject "ChangePDFColor" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19C710DB28C6EB1000C25FA8;
+			productRefGroup = 19C710E528C6EB1000C25FA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19C710E328C6EB1000C25FA8 /* ChangePDFColor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19C710E228C6EB1000C25FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C710EF28C6EB1200C25FA8 /* Preview Assets.xcassets in Resources */,
+				19C710EC28C6EB1200C25FA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71A3951751587B58AAE0D02C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChangePDFColor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8137FB199751EC63A7A62640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19C710E028C6EB1000C25FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C710F728C6EB2500C25FA8 /* ChangeColor.swift in Sources */,
+				19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */,
+				19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */,
+				19FDCA5028C8915900142487 /* PDFView.swift in Sources */,
+				19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */,
+				19FDCA4E28C83C2900142487 /* DragableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		19C710F128C6EB1200C25FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19C710F228C6EB1200C25FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		19C710F428C6EB1200C25FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59B66B96083F4D51AE0FEC7B /* Pods-ChangePDFColor.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChangePDFColor/ChangePDFColor.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChangePDFColor/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = RS.ChangePDFColor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		19C710F528C6EB1200C25FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CAD78C28940BF32F8DC2348 /* Pods-ChangePDFColor.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChangePDFColor/ChangePDFColor.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChangePDFColor/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = RS.ChangePDFColor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19C710DF28C6EB1000C25FA8 /* Build configuration list for PBXProject "ChangePDFColor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C710F128C6EB1200C25FA8 /* Debug */,
+				19C710F228C6EB1200C25FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C710F328C6EB1200C25FA8 /* Build configuration list for PBXNativeTarget "ChangePDFColor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C710F428C6EB1200C25FA8 /* Debug */,
+				19C710F528C6EB1200C25FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19C710DC28C6EB1000C25FA8 /* Project object */;
+}
