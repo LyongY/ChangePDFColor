@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194D812C28CAC225004C022A /* PDFAnalyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D812B28CAC225004C022A /* PDFAnalyze.swift */; };
+		194D813728CAF578004C022A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 194D813628CAF572004C022A /* libz.tbd */; };
+		194D813B28CAFD01004C022A /* NSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 194D813A28CAFD01004C022A /* NSData+zlib.m */; };
 		19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */; };
 		19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E928C6EB1000C25FA8 /* ContentView.swift */; };
 		19C710EC28C6EB1200C25FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C710EB28C6EB1200C25FA8 /* Assets.xcassets */; };
@@ -20,6 +23,11 @@
 
 /* Begin PBXFileReference section */
 		0CAD78C28940BF32F8DC2348 /* Pods-ChangePDFColor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangePDFColor.release.xcconfig"; path = "Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor.release.xcconfig"; sourceTree = "<group>"; };
+		194D812B28CAC225004C022A /* PDFAnalyze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFAnalyze.swift; sourceTree = "<group>"; };
+		194D813628CAF572004C022A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		194D813828CAFD00004C022A /* ChangePDFColor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangePDFColor-Bridging-Header.h"; sourceTree = "<group>"; };
+		194D813928CAFD01004C022A /* NSData+zlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+zlib.h"; sourceTree = "<group>"; };
+		194D813A28CAFD01004C022A /* NSData+zlib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+zlib.m"; sourceTree = "<group>"; };
 		19C710E428C6EB1000C25FA8 /* ChangePDFColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangePDFColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePDFColorApp.swift; sourceTree = "<group>"; };
 		19C710E928C6EB1000C25FA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D24ACD52D9DB08860807C3 /* Pods_ChangePDFColor.framework in Frameworks */,
+				194D813728CAF578004C022A /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +82,13 @@
 				19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */,
 				19FDCA4D28C83C2900142487 /* DragableView.swift */,
 				19FDCA4F28C8915900142487 /* PDFView.swift */,
+				194D812B28CAC225004C022A /* PDFAnalyze.swift */,
+				194D813928CAFD01004C022A /* NSData+zlib.h */,
+				194D813A28CAFD01004C022A /* NSData+zlib.m */,
 				19C710EB28C6EB1200C25FA8 /* Assets.xcassets */,
 				19C710F028C6EB1200C25FA8 /* ChangePDFColor.entitlements */,
 				19C710ED28C6EB1200C25FA8 /* Preview Content */,
+				194D813828CAFD00004C022A /* ChangePDFColor-Bridging-Header.h */,
 			);
 			path = ChangePDFColor;
 			sourceTree = "<group>";
@@ -91,6 +104,7 @@
 		1F2528B61D4220DD1EC08E82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				194D813628CAF572004C022A /* libz.tbd */,
 				9273997A6B6D5E2623DD5090 /* Pods_ChangePDFColor.framework */,
 			);
 			name = Frameworks;
@@ -139,6 +153,7 @@
 				TargetAttributes = {
 					19C710E328C6EB1000C25FA8 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -224,7 +239,9 @@
 				19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */,
 				19FDCA5028C8915900142487 /* PDFView.swift in Sources */,
 				19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */,
+				194D813B28CAFD01004C022A /* NSData+zlib.m in Sources */,
 				19FDCA4E28C83C2900142487 /* DragableView.swift in Sources */,
+				194D812C28CAC225004C022A /* PDFAnalyze.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChangePDFColor/ChangePDFColor.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -369,6 +387,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChangePDFColor/ChangePDFColor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -379,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChangePDFColor/ChangePDFColor.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -398,6 +419,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChangePDFColor/ChangePDFColor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

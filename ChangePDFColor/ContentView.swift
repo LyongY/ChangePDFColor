@@ -7,28 +7,54 @@
 
 import SwiftUI
 
+class UserData {
+    static let `default` = UserData()
+    private init() { }
+    var exportType = "pdf"
+    var dpi = 72
+    var inkscapePath = "/Applications/Inkscape.app"
+}
+
 struct ContentView: View {
+    @State var inkscapePath = UserData.default.inkscapePath
     @State var inDir: String = ""
     @State var outDir: String = ""
     @State var pdfPath: String = ""
 
-    @State var colors = [
-//        RGB2RGB(RGB(114, 184, 254), RGB(0, 222, 230), deviation: 3),
-//        RGB2RGB(RGB(78, 126, 255), RGB(222, 230, 0), deviation: 3),
-//        RGB2RGB(RGB(67, 128, 235), RGB(0, 222, 230), deviation: 3),
-        RGB2RGB(RGB(114, 184, 254), RGB(255, 0, 0), deviation: 3),
-        RGB2RGB(RGB(78, 126, 255), RGB(0, 255, 0), deviation: 3),
-        RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 255), deviation: 3),
-    ]
+    @State var exportType = UserData.default.exportType
+    @State var dpi = UserData.default.dpi
+    
+    @State var colors: [RGB2RGB] = []
 
-    @State var pdfColors: [RGB] = [RGB(67, 128, 235), RGB(0, 222, 230)]
+    @State var pdfColors: [RGB] = []
 
     var body: some View {
         VStack(alignment: .leading) {
+
             VStack(spacing: 0) {
+                DirectoryView(title: "拖入 Inkscape app", dirPath: $inkscapePath)
+                    .onChange(of: inkscapePath) { newValue in
+                        UserData.default.inkscapePath = newValue
+                    }
                 DirectoryView(title: "拖入输入文件夹", dirPath: $inDir)
                 DirectoryView(title: "拖入输出文件夹", dirPath: $outDir)
             }
+
+            Picker("导出为", selection: $exportType) {
+                Text("png").tag("png")
+                Text("pdf").tag("pdf")
+            }.onChange(of: exportType) { newValue in
+                UserData.default.exportType = newValue
+            }
+
+            Picker("屏幕为", selection: $dpi) {
+                Text("@1x").tag(36)
+                Text("@2x").tag(72)
+                Text("@3x").tag(108)
+            }.onChange(of: dpi) { newValue in
+                UserData.default.dpi = newValue
+            }
+
 
             List {
                 Section("颜色转换列表") {
@@ -57,7 +83,8 @@ struct ContentView: View {
                         URL(fileURLWithPath: path).pathExtension == "pdf"
                     } dragIn: { path in
                         pdfPath = path
-                        pdfColors = ChangeColor.colorsWith(pdfPath: path)
+                        let pdf = PDFAnalyze(src: path)
+                        pdfColors = pdf.colors
                     }
                 }
                 List {
@@ -87,7 +114,7 @@ struct ContentView: View {
 
             HStack {
                 Button("开始转换") {
-                    _ = ChangeColor.dir(in: "/Users/yly/Desktop/0 pdf change color/testDir", out: "/Users/yly/Desktop/0 pdf change color/testDirOut", colors: colors)
+                    _ = ChangeColor.dir(in: inDir, out: outDir, colors: colors)
                 }
             }
 
@@ -95,13 +122,6 @@ struct ContentView: View {
             .frame(minWidth: 700, minHeight: 800)
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 
 struct DirectoryView: View {
     let title: String
@@ -193,5 +213,19 @@ struct ConvertColorView: View {
                 Image(systemName: "xmark.circle.fill")
             }.buttonStyle(.plain)
         }
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(
+            colors: [
+                RGB2RGB(RGB(114, 184, 254), RGB(255, 0, 0), deviation: 3),
+                RGB2RGB(RGB(78, 126, 255), RGB(0, 255, 0), deviation: 3),
+                RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 255), deviation: 3),
+            ],
+            pdfColors: [RGB(67, 128, 235), RGB(0, 222, 230)]
+        )
     }
 }

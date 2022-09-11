@@ -7,11 +7,11 @@
 
 import Foundation
 import Kanna
-import Macaw
 
 enum ChangeColor {
     static func dir(in: String, out: String, colors: [RGB2RGB]) -> Bool {
         guard isDir(`in`), isDir(out) else { return false }
+        guard `in`.count > 15, out.count > 15 else { return false } // 防止遍历 root 文件夹
 
         let fileManager = FileManager.default
         guard var pathArr = fileManager.subpaths(atPath: `in`) else { return false }
@@ -27,9 +27,15 @@ enum ChangeColor {
             let inURL = URL(fileURLWithPath: inPath)
             var outURL = URL(fileURLWithPath: out)
             outURL.appendPathComponent(inURL.lastPathComponent)
-            outURL = URL(fileURLWithPath: outURL.path.replacingOccurrences(of: ".pdf", with: ".png")) // 转成png
-            guard path(in: inPath, out: outURL.path, colors: colors) else {
-                return false
+            if UserData.default.exportType == "png" {
+                outURL = URL(fileURLWithPath: outURL.path.replacingOccurrences(of: ".pdf", with: ".png")) // 转成png
+                guard path(in: inPath, out: outURL.path, colors: colors) else {
+                    return false
+                }
+            } else if UserData.default.exportType == "pdf" {
+                let pdf = PDFAnalyze(src: inPath)
+                pdf.change(colors: colors)
+                pdf.export(to: outURL.path)
             }
         }
         return true
@@ -69,9 +75,8 @@ enum ChangeColor {
     private static func convert(pdfPath: String, toSvgPath: String) -> Bool {
         let pipe = Pipe()
         let process = Process()
-        process.launchPath = "/usr/local/bin/inkscape"
-//        process.arguments = ["--export-plain-svg", "--export-filename=\(toSvgPath)", "--pdf-poppler", pdfPath]
-        process.arguments = ["--export-filename=\(toSvgPath)", "--pdf-poppler", pdfPath]
+        process.launchPath = UserData.default.inkscapePath + "/Contents/MacOS/inkscape"
+        process.arguments = ["--export-plain-svg", "--export-filename=\(toSvgPath)", "--pdf-poppler", pdfPath]
         process.standardOutput = pipe
         process.launch()
 
@@ -135,25 +140,10 @@ enum ChangeColor {
     }
 
     private static func convert(svgPath: String, toPdfPath: String) -> Bool {
-
-//        let svgView = SVGView(frame: .init(x: 0, y: 0, width: 80, height: 80))
-//        svgView.fileName = svgPath
-//        svgView.toPDF(size: .init(width: 80, height: 80), path: .init(fileURLWithPath: toPdfPath))
-
-
-//        guard let node = try? SVGParser.parse(fullPath: svgPath) else { return false }
-//
-//        let view = SVGView(node: node, frame: .init(x: 0, y: 0, width: 80, height: 80))
-//        view.toPDF(size: .init(width: 80, height: 80), path: .init(fileURLWithPath: toPdfPath))
-//
-//        return true
-
         let pipe = Pipe()
         let process = Process()
-        process.launchPath = "/usr/local/bin/inkscape"
-//        process.arguments = ["--export-filename=\(toPdfPath)", "--export-dpi=36", svgPath]
-//        process.arguments = ["--export-filename=\(toPdfPath)", "--export-dpi=72", svgPath]
-        process.arguments = ["--export-filename=\(toPdfPath)", "--export-dpi=108", svgPath]
+        process.launchPath = UserData.default.inkscapePath + "/Contents/MacOS/inkscape"
+        process.arguments = ["--export-filename=\(toPdfPath)", "--export-dpi=\(UserData.default.dpi)", svgPath]
         process.standardOutput = pipe
         process.launch()
 

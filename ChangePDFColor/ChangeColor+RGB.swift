@@ -30,7 +30,11 @@ class RGB2RGB: Identifiable {
     }
 }
 
-class RGB: ObservableObject, Identifiable {
+class RGB: ObservableObject, Identifiable, Equatable {
+    static func == (lhs: RGB, rhs: RGB) -> Bool {
+        lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b
+    }
+
     let id = UUID()
     @Published var r: Int
     @Published var g: Int
