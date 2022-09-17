@@ -10,11 +10,14 @@
 		194D812C28CAC225004C022A /* PDFAnalyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D812B28CAC225004C022A /* PDFAnalyze.swift */; };
 		194D813728CAF578004C022A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 194D813628CAF572004C022A /* libz.tbd */; };
 		194D813B28CAFD01004C022A /* NSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 194D813A28CAFD01004C022A /* NSData+zlib.m */; };
+		1961091128D569C900FEA51A /* PDFNotStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961091028D569C800FEA51A /* PDFNotStream.swift */; };
+		1961091328D5B19600FEA51A /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961091228D5B19600FEA51A /* String+Regex.swift */; };
 		19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */; };
 		19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710E928C6EB1000C25FA8 /* ContentView.swift */; };
 		19C710EC28C6EB1200C25FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C710EB28C6EB1200C25FA8 /* Assets.xcassets */; };
 		19C710EF28C6EB1200C25FA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C710EE28C6EB1200C25FA8 /* Preview Assets.xcassets */; };
 		19C710F728C6EB2500C25FA8 /* ChangeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C710F628C6EB2500C25FA8 /* ChangeColor.swift */; };
+		19D57FC528D4657300357F59 /* PDFStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D57FC428D4657300357F59 /* PDFStream.swift */; };
 		19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */; };
 		19FDCA4E28C83C2900142487 /* DragableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDCA4D28C83C2900142487 /* DragableView.swift */; };
 		19FDCA5028C8915900142487 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDCA4F28C8915900142487 /* PDFView.swift */; };
@@ -28,6 +31,8 @@
 		194D813828CAFD00004C022A /* ChangePDFColor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangePDFColor-Bridging-Header.h"; sourceTree = "<group>"; };
 		194D813928CAFD01004C022A /* NSData+zlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+zlib.h"; sourceTree = "<group>"; };
 		194D813A28CAFD01004C022A /* NSData+zlib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+zlib.m"; sourceTree = "<group>"; };
+		1961091028D569C800FEA51A /* PDFNotStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFNotStream.swift; sourceTree = "<group>"; };
+		1961091228D5B19600FEA51A /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		19C710E428C6EB1000C25FA8 /* ChangePDFColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangePDFColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C710E728C6EB1000C25FA8 /* ChangePDFColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePDFColorApp.swift; sourceTree = "<group>"; };
 		19C710E928C6EB1000C25FA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +40,7 @@
 		19C710EE28C6EB1200C25FA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19C710F028C6EB1200C25FA8 /* ChangePDFColor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangePDFColor.entitlements; sourceTree = "<group>"; };
 		19C710F628C6EB2500C25FA8 /* ChangeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColor.swift; sourceTree = "<group>"; };
+		19D57FC428D4657300357F59 /* PDFStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFStream.swift; sourceTree = "<group>"; };
 		19E21A5528C7308A0064CCC9 /* ChangeColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangeColor+RGB.swift"; sourceTree = "<group>"; };
 		19FDCA4D28C83C2900142487 /* DragableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragableView.swift; sourceTree = "<group>"; };
 		19FDCA4F28C8915900142487 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				19FDCA4D28C83C2900142487 /* DragableView.swift */,
 				19FDCA4F28C8915900142487 /* PDFView.swift */,
 				194D812B28CAC225004C022A /* PDFAnalyze.swift */,
+				1961091028D569C800FEA51A /* PDFNotStream.swift */,
+				19D57FC428D4657300357F59 /* PDFStream.swift */,
+				1961091228D5B19600FEA51A /* String+Regex.swift */,
 				194D813928CAFD01004C022A /* NSData+zlib.h */,
 				194D813A28CAFD01004C022A /* NSData+zlib.m */,
 				19C710EB28C6EB1200C25FA8 /* Assets.xcassets */,
@@ -236,11 +245,14 @@
 			files = (
 				19C710F728C6EB2500C25FA8 /* ChangeColor.swift in Sources */,
 				19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */,
+				1961091328D5B19600FEA51A /* String+Regex.swift in Sources */,
 				19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */,
 				19FDCA5028C8915900142487 /* PDFView.swift in Sources */,
 				19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */,
+				19D57FC528D4657300357F59 /* PDFStream.swift in Sources */,
 				194D813B28CAFD01004C022A /* NSData+zlib.m in Sources */,
 				19FDCA4E28C83C2900142487 /* DragableView.swift in Sources */,
+				1961091128D569C900FEA51A /* PDFNotStream.swift in Sources */,
 				194D812C28CAC225004C022A /* PDFAnalyze.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

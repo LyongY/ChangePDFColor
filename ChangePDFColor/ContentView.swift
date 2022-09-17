@@ -24,7 +24,11 @@ struct ContentView: View {
     @State var exportType = UserData.default.exportType
     @State var dpi = UserData.default.dpi
     
-    @State var colors: [RGB2RGB] = []
+    @State var colors: [RGB2RGB] = [
+        RGB2RGB(RGB(114, 184, 254), RGB(88, 0, 0), deviation: 3),
+        RGB2RGB(RGB(78, 126, 255), RGB(0, 88, 0), deviation: 3),
+        RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 88), deviation: 3)
+    ]
 
     @State var pdfColors: [RGB] = []
 

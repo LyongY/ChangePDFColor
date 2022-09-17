@@ -55,6 +55,11 @@
 }
 
 - (NSData *)unzipped {
+    const UInt8 *bytes = (const UInt8 *)self.bytes;
+    if (!(self.length >= 2 && bytes[0] == 0x78 && bytes[1] == 0x9c)) {
+        return nil;
+    }
+
     if (self.length == 0)
     {
         return self;
