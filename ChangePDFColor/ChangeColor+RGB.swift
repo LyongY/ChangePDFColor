@@ -13,9 +13,9 @@ class RGB2RGB: Identifiable {
     let oriRGB: RGB
     let toRGB: RGB
 
-    var deviation: Int
+    var deviation: Double
 
-    init(_ oriRGB: RGB, _ toRGB: RGB, deviation: Int) {
+    init(_ oriRGB: RGB, _ toRGB: RGB, deviation: Double) {
         self.oriRGB = oriRGB
         self.toRGB = toRGB
         self.deviation = deviation
@@ -56,11 +56,11 @@ class RGB: ObservableObject, Identifiable, Equatable {
         RGB(r, g, b)
     }
 
-    func like(_ color: RGB, deviation: Int) -> Bool {
+    func like(_ color: RGB, deviation: Double) -> Bool {
         if
-            r >= color.r - deviation, r <= color.r + deviation,
-            g >= color.g - deviation, g <= color.g + deviation,
-            b >= color.b - deviation, b <= color.b + deviation
+            r >= color.r - Int(deviation), r <= color.r + Int(deviation),
+            g >= color.g - Int(deviation), g <= color.g + Int(deviation),
+            b >= color.b - Int(deviation), b <= color.b + Int(deviation)
         {
             return true
         }
@@ -98,5 +98,23 @@ class RGB: ObservableObject, Identifiable, Equatable {
                 b = 0
             }
         }
+    }
+
+    var hueString: String {
+        let color = NSColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: 1)
+        return String(format: "Hue: %.4f", color.hueComponent)
+    }
+
+    var hue: CGFloat {
+        nsColor.hueComponent
+    }
+
+    var nsColor: NSColor {
+        NSColor(
+            red: CGFloat(r) / 255,
+            green: CGFloat(g) / 255,
+            blue: CGFloat(b) / 255,
+            alpha: 1
+        )
     }
 }

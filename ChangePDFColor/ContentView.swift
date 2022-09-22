@@ -7,70 +7,56 @@
 
 import SwiftUI
 
-class UserData {
-    static let `default` = UserData()
-    private init() { }
-    var exportType = "pdf"
-    var dpi = 72
-    var inkscapePath = "/Applications/Inkscape.app"
-}
-
 struct ContentView: View {
-    @State var inkscapePath = UserData.default.inkscapePath
     @State var inDir: String = ""
     @State var outDir: String = ""
-    @State var pdfPath: String = ""
+    @State var dragInFilePath: String = ""
 
-    @State var exportType = UserData.default.exportType
-    @State var dpi = UserData.default.dpi
-    
-    @State var colors: [RGB2RGB] = [
+    @State var pdfColors: [RGB2RGB] = [
         RGB2RGB(RGB(114, 184, 254), RGB(88, 0, 0), deviation: 3),
         RGB2RGB(RGB(78, 126, 255), RGB(0, 88, 0), deviation: 3),
         RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 88), deviation: 3)
     ]
 
-    @State var pdfColors: [RGB] = []
+    @State var pngColors: [RGB2RGB] = [
+        RGB2RGB(RGB(0, 102, 255), RGB(235, 97, 0), deviation: 0.05),
+    ]
+
+    @State var dragInFileColors: [RGB] = []
 
     var body: some View {
         VStack(alignment: .leading) {
-
             VStack(spacing: 0) {
-                DirectoryView(title: "拖入 Inkscape app", dirPath: $inkscapePath)
-                    .onChange(of: inkscapePath) { newValue in
-                        UserData.default.inkscapePath = newValue
-                    }
                 DirectoryView(title: "拖入输入文件夹", dirPath: $inDir)
                 DirectoryView(title: "拖入输出文件夹", dirPath: $outDir)
             }
 
-            Picker("导出为", selection: $exportType) {
-                Text("png").tag("png")
-                Text("pdf").tag("pdf")
-            }.onChange(of: exportType) { newValue in
-                UserData.default.exportType = newValue
-            }
-
-            Picker("屏幕为", selection: $dpi) {
-                Text("@1x").tag(36)
-                Text("@2x").tag(72)
-                Text("@3x").tag(108)
-            }.onChange(of: dpi) { newValue in
-                UserData.default.dpi = newValue
-            }
-
-
             List {
-                Section("颜色转换列表") {
-                    ForEach(colors) { item in
-                        ConvertColorView(item) { model in
-                            colors = colors.filter { $0 !== model }
+                Section("pdf 颜色转换列表") {
+                    ForEach(pdfColors) { item in
+                        ConvertColorView(item, deviationDescrebe: "误差(0~255)") { model in
+                            pdfColors = pdfColors.filter { $0 !== model }
                         }
                     }
                     HStack {
                         Spacer()
                         Button("添加新颜色") {
-                            colors.append(RGB2RGB(RGB(0, 0, 0), RGB(0, 0, 0), deviation: 0))
+                            pdfColors.append(RGB2RGB(RGB(0, 0, 0), RGB(0, 0, 0), deviation: 1))
+                        }
+                        Spacer()
+                    }
+                }
+
+                Section("png 颜色转换列表") {
+                    ForEach(pngColors) { item in
+                        ConvertColorView(item, deviationDescrebe: "误差(0.0~1.0)") { model in
+                            pngColors = pngColors.filter { $0 !== model }
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        Button("添加新颜色") {
+                            pngColors.append(RGB2RGB(RGB(0, 0, 0), RGB(0, 0, 0), deviation: 0.05))
                         }
                         Spacer()
                     }
@@ -80,19 +66,36 @@ struct ContentView: View {
             HStack {
                 ZStack {
                     VStack {
-                        Text("拖入pdf文件")
-                        PDFViewRepresentable(path: pdfPath)
+                        Text("拖入 pdf 或 png 文件")
+                        if dragInFilePath.isPdf {
+                            PDFViewRepresentable(path: dragInFilePath)
+                        } else if dragInFilePath.isPng {
+                            AsyncImage(url: URL(fileURLWithPath: dragInFilePath)){ phase in
+                                switch phase {
+                                case .success(let image):
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                default:
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                     DragableView { path in
-                        URL(fileURLWithPath: path).pathExtension == "pdf"
+                        path.isPdf || path.isPng
                     } dragIn: { path in
-                        pdfPath = path
-                        let pdf = PDFAnalyze(src: path)
-                        pdfColors = pdf.colors
+                        dragInFilePath = path
+                        if path.isPdf {
+                            let pdf = PDFAnalyze(src: path)
+                            dragInFileColors = pdf.colors
+                        } else if path.isPng {
+                            let png = PNGAnalyze(src: path)
+                            dragInFileColors = png.colors
+                        }
                     }
                 }
                 List {
-                    ForEach(pdfColors) { color in
+                    ForEach(dragInFileColors) { color in
                         HStack {
                             Rectangle().fill(
                                 Color(
@@ -103,11 +106,17 @@ struct ContentView: View {
                                     opacity: 1
                                 )
                             ).frame(maxWidth: 36, maxHeight: 36)
-                            Text(color.hexString).font(.system(size: 13).monospaced())
+                            Text(color.hexString + "  " + color.hueString).font(.system(size: 13).monospaced())
                             Button {
-                                colors.append(
-                                    RGB2RGB(color.clone(), color.clone(), deviation: 1)
-                                )
+                                if dragInFilePath.isPdf {
+                                    pdfColors.append(
+                                        RGB2RGB(color.clone(), color.clone(), deviation: 1)
+                                    )
+                                } else if dragInFilePath.isPng {
+                                    pngColors.append(
+                                        RGB2RGB(color.clone(), color.clone(), deviation: 0.05)
+                                    )
+                                }
                             } label: {
                                 Image(systemName: "plus.circle.fill")
                             }.buttonStyle(.plain)
@@ -118,7 +127,7 @@ struct ContentView: View {
 
             HStack {
                 Button("开始转换") {
-                    _ = ChangeColor.dir(in: inDir, out: outDir, colors: colors)
+                    _ = ChangeColor.dir(in: inDir, out: outDir, pdfColors: pdfColors, pngColors: pngColors)
                 }
             }
 
@@ -153,10 +162,12 @@ struct ConvertColorView: View {
     @State var toHex: String
     @State var deviation: String
 
+    let deviationDescrebe: String
     var deleteClick: (RGB2RGB) -> Void
 
-    init(_ model: RGB2RGB, deleteClick: @escaping (_ model: RGB2RGB) -> Void) {
+    init(_ model: RGB2RGB, deviationDescrebe: String, deleteClick: @escaping (_ model: RGB2RGB) -> Void) {
         self.model = model
+        self.deviationDescrebe = deviationDescrebe
         self.deleteClick = deleteClick
         oriRGB = model.oriRGB
         toRGB = model.toRGB
@@ -187,12 +198,12 @@ struct ConvertColorView: View {
                 )
             ).frame(maxWidth: 36, maxHeight: 36)
 
-            Text("误差")
+            Text(deviationDescrebe)
             TextField("", text: $deviation)
                 .textFieldStyle(.roundedBorder)
-                .frame(maxWidth: 36)
+                .frame(maxWidth: 50)
                 .onChange(of: deviation) { newValue in
-                    if let deviation = Int(newValue) {
+                    if let deviation = Double(newValue) {
                         model.deviation = deviation
                     }
                 }
@@ -224,12 +235,17 @@ struct ConvertColorView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
-            colors: [
+            pdfColors: [
                 RGB2RGB(RGB(114, 184, 254), RGB(255, 0, 0), deviation: 3),
                 RGB2RGB(RGB(78, 126, 255), RGB(0, 255, 0), deviation: 3),
                 RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 255), deviation: 3),
             ],
-            pdfColors: [RGB(67, 128, 235), RGB(0, 222, 230)]
+            pngColors: [
+                RGB2RGB(RGB(114, 184, 254), RGB(255, 0, 0), deviation: 3),
+                RGB2RGB(RGB(78, 126, 255), RGB(0, 255, 0), deviation: 3),
+                RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 255), deviation: 3),
+            ],
+            dragInFileColors: [RGB(67, 128, 235), RGB(0, 222, 230)]
         )
     }
 }

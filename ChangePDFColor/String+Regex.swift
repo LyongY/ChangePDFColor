@@ -23,3 +23,13 @@ extension String {
                                                       withTemplate: with)
     }
 }
+
+extension String {
+    var isPng: Bool {
+        URL(fileURLWithPath: self).pathExtension.regexMatch(pattern: "^png$", options: [.caseInsensitive]).count != 0
+    }
+
+    var isPdf: Bool {
+        URL(fileURLWithPath: self).pathExtension.regexMatch(pattern: "^pdf$", options: [.caseInsensitive]).count != 0
+    }
+}

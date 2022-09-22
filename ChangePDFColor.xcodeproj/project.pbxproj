@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1925760E28D9803B00135E08 /* PNGAnalyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1925760D28D9803B00135E08 /* PNGAnalyze.swift */; };
 		194D812C28CAC225004C022A /* PDFAnalyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194D812B28CAC225004C022A /* PDFAnalyze.swift */; };
 		194D813728CAF578004C022A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 194D813628CAF572004C022A /* libz.tbd */; };
 		194D813B28CAFD01004C022A /* NSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 194D813A28CAFD01004C022A /* NSData+zlib.m */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0CAD78C28940BF32F8DC2348 /* Pods-ChangePDFColor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangePDFColor.release.xcconfig"; path = "Target Support Files/Pods-ChangePDFColor/Pods-ChangePDFColor.release.xcconfig"; sourceTree = "<group>"; };
+		1925760D28D9803B00135E08 /* PNGAnalyze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNGAnalyze.swift; sourceTree = "<group>"; };
+		1925760F28D9968100135E08 /* Inkscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inkscape.swift; sourceTree = "<group>"; };
 		194D812B28CAC225004C022A /* PDFAnalyze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFAnalyze.swift; sourceTree = "<group>"; };
 		194D813628CAF572004C022A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		194D813828CAFD00004C022A /* ChangePDFColor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangePDFColor-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				194D812B28CAC225004C022A /* PDFAnalyze.swift */,
 				1961091028D569C800FEA51A /* PDFNotStream.swift */,
 				19D57FC428D4657300357F59 /* PDFStream.swift */,
+				1925760D28D9803B00135E08 /* PNGAnalyze.swift */,
+				1925760F28D9968100135E08 /* Inkscape.swift */,
 				1961091228D5B19600FEA51A /* String+Regex.swift */,
 				194D813928CAFD01004C022A /* NSData+zlib.h */,
 				194D813A28CAFD01004C022A /* NSData+zlib.m */,
@@ -247,6 +252,7 @@
 				19C710EA28C6EB1000C25FA8 /* ContentView.swift in Sources */,
 				1961091328D5B19600FEA51A /* String+Regex.swift in Sources */,
 				19C710E828C6EB1000C25FA8 /* ChangePDFColorApp.swift in Sources */,
+				1925760E28D9803B00135E08 /* PNGAnalyze.swift in Sources */,
 				19FDCA5028C8915900142487 /* PDFView.swift in Sources */,
 				19E21A5628C7308A0064CCC9 /* ChangeColor+RGB.swift in Sources */,
 				19D57FC528D4657300357F59 /* PDFStream.swift in Sources */,
