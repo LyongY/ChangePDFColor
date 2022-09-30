@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var inDir: String = ""
-    @State var outDir: String = ""
+    @State var inDir: String = "/Users/yly/Documents/Programs/GITPrograms/iOS/Programs/SmartCamView/SmartCam View/Launch/Assets.xcassets"
+    @State var outDir: String = "/Users/yly/Desktop/NapCat图标"
     @State var dragInFilePath: String = ""
 
     @State var pdfColors: [RGB2RGB] = [
-        RGB2RGB(RGB(114, 184, 254), RGB(88, 0, 0), deviation: 3),
-        RGB2RGB(RGB(78, 126, 255), RGB(0, 88, 0), deviation: 3),
-        RGB2RGB(RGB(67, 128, 235), RGB(0, 0, 88), deviation: 3)
+        RGB2RGB(RGB(114, 184, 254), RGB(255, 131, 31), deviation: 3), // 渐变pdf 浅
+        RGB2RGB(RGB(78, 126, 255), RGB(235, 96, 0), deviation: 3), // 渐变pdf 深
+        RGB2RGB(RGB(95, 154, 255), RGB(235, 97, 0), deviation: 3), // user 嘴
+        RGB2RGB(RGB(67, 128, 235), RGB(235, 97, 0), deviation: 3), // 非渐变pdf
     ]
 
     @State var pngColors: [RGB2RGB] = [
-        RGB2RGB(RGB(0, 102, 255), RGB(235, 97, 0), deviation: 0.05),
+        RGB2RGB(RGB(67, 128, 235), RGB(235, 97, 0), deviation: 0.05), // 主题色
     ]
 
     @State var dragInFileColors: [RGB] = []
